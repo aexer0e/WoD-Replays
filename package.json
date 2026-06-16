@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "tauri": "tauri",
     "sync-version": "node scripts/sync-version.mjs",
     "dev": "npm run sync-version && tauri dev",
     "build": "npm run sync-version && tauri build",
