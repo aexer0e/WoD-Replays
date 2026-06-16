@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Map thumbnail unavailable">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#26372f"/>
+      <stop offset="0.55" stop-color="#17231f"/>
+      <stop offset="1" stop-color="#121715"/>
+    </linearGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0v64" fill="none" stroke="#ffffff" stroke-opacity=".06" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect width="960" height="540" fill="url(#sky)"/>
+  <rect width="960" height="540" fill="url(#grid)"/>
+  <path d="M0 385C126 332 205 357 293 318c96-42 140-132 252-124 100 7 118 84 219 90 73 5 128-31 196-73v329H0Z" fill="#314339" opacity=".88"/>
+  <path d="M0 438c104-26 184-19 284-34 158-24 219-88 361-69 118 16 203 77 315 70v135H0Z" fill="#1f2d27" opacity=".95"/>
+  <circle cx="203" cy="211" r="17" fill="#e4be5a"/>
+  <circle cx="694" cy="188" r="17" fill="#e4be5a"/>
+  <circle cx="512" cy="336" r="17" fill="#e4be5a"/>
+  <path d="M203 211 512 336 694 188" fill="none" stroke="#e4be5a" stroke-opacity=".36" stroke-width="9" stroke-linecap="round"/>
+</svg>

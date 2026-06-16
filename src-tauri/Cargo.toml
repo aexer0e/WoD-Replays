@@ -1,0 +1,24 @@
+[package]
+name = "wod-replays"
+version = "1.0.0"
+description = "War of Dots replay browser"
+authors = ["local"]
+edition = "2021"
+rust-version = "1.77"
+
+[lib]
+name = "wod_replays_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+base64 = "0.22"
+flate2 = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri = { version = "2", features = [] }
+
+[target.'cfg(windows)'.dependencies]
+winreg = "0.55"

@@ -1,0 +1,15 @@
+{
+  "name": "wod-replays",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync-version": "node scripts/sync-version.mjs",
+    "dev": "npm run sync-version && tauri dev",
+    "build": "npm run sync-version && tauri build",
+    "check": "npm run sync-version && cargo check --manifest-path src-tauri/Cargo.toml"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.0.0"
+  }
+}

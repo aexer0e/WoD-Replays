@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WoD Replays</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="replay-browser" aria-label="War of Dots replays">
+      <div class="search-row">
+        <div class="search-controls">
+          <div
+            id="playerSearchBox"
+            class="search-combobox"
+            role="combobox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-owns="playerSuggestionList"
+          >
+            <input
+              id="playerSearch"
+              class="player-search"
+              type="search"
+              placeholder="Search players"
+              aria-label="Search player usernames"
+              aria-autocomplete="list"
+              aria-controls="playerSuggestionList"
+              autocomplete="off"
+              spellcheck="false"
+              disabled
+            >
+            <button
+              id="clearPlayerSearch"
+              class="search-clear"
+              type="button"
+              aria-label="Clear search"
+              hidden
+            >x</button>
+            <div id="playerSuggestionPanel" class="player-suggestion-panel" hidden>
+              <div
+                id="playerSuggestionList"
+                class="player-suggestion-list"
+                role="listbox"
+                aria-label="Player suggestions"
+              ></div>
+            </div>
+          </div>
+          <label class="match-mode-toggle" title="Dim non-matching replays">
+            <input
+              id="matchModeToggle"
+              type="checkbox"
+              aria-label="Dim non-matching replays"
+              disabled
+            >
+            <span aria-hidden="true">&#128123;&#65039;</span>
+          </label>
+        </div>
+        <div class="filter-controls">
+          <div class="type-filters" role="group" aria-label="Match type filters">
+            <label><input class="type-filter" type="checkbox" value="1v1" checked disabled>1v1</label>
+            <label><input class="type-filter" type="checkbox" value="3P FFA" checked disabled>3P</label>
+            <label><input class="type-filter" type="checkbox" value="4P FFA" checked disabled>4P</label>
+          </div>
+          <div class="duration-filter" aria-label="Duration filter">
+            <span id="durationMinLabel" class="duration-label">00:00</span>
+            <div id="durationSlider" class="duration-slider">
+              <div class="duration-track"></div>
+              <div id="durationRangeFill" class="duration-range-fill"></div>
+              <input id="durationMin" type="range" min="0" max="0" value="0" step="1" aria-label="Minimum duration" disabled>
+              <input id="durationMax" type="range" min="0" max="0" value="0" step="1" aria-label="Maximum duration" disabled>
+            </div>
+            <span id="durationMaxLabel" class="duration-label">00:00</span>
+          </div>
+        </div>
+      </div>
+      <section id="replayGrid" class="replay-grid" aria-live="polite"></section>
+      <div id="searchEmpty" class="state-message search-empty" hidden>No matching replays.</div>
+      <button id="refreshReplays" class="refresh-button" type="button" aria-label="Refresh replays" title="Refresh replays">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M20 12a8 8 0 0 1-13.7 5.7" />
+          <path d="M4 12A8 8 0 0 1 17.7 6.3" />
+          <path d="M17.7 2.7v3.6h-3.6" />
+          <path d="M6.3 21.3v-3.6h3.6" />
+        </svg>
+      </button>
+    </main>
+
+    <template id="replayCardTemplate">
+      <article class="replay-card">
+        <img class="replay-thumb" alt="" loading="lazy">
+        <div class="replay-shade"></div>
+        <div class="replay-labels">
+          <div class="replay-label match-type"></div>
+          <div class="replay-label length"></div>
+        </div>
+        <div class="replay-meta">
+          <div class="players"></div>
+        </div>
+      </article>
+    </template>
+
+    <script src="main.js"></script>
+  </body>
+</html>
